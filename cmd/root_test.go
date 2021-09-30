@@ -9,7 +9,7 @@ func TestRootCmda(t *testing.T) {
 	buf := bytes.NewBufferString("")
 	rootCmd.SetOut(buf)
 
-	rootCmd.Execute()
+	_ = rootCmd.Execute()
 
 	out := buf.String()
 	if out != "Merhaba Go Türkiye!!!" {
