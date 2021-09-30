@@ -11,6 +11,8 @@ builds:
       - linux
       - windows
       - darwin
+    ldflags:
+      - -s -w -X github.com/GoTurkiye/hello-world-cli/cmd.GitCommit={{ .Commit }} -X github.com/GoTurkiye/hello-world-cli/cmd.Version={{ .Version }}
 archives:
   - replacements:
       darwin: Darwin

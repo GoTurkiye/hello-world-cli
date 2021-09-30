@@ -25,6 +25,11 @@ import (
 	"github.com/spf13/viper"
 )
 
+var (
+	GitCommit string
+	Version   string
+)
+
 var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
@@ -40,6 +45,7 @@ to quickly create a Cobra application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Printf("Working version: %s and commit: %s\n", Version, GitCommit)
 		fmt.Fprintf(cmd.OutOrStdout(), "Merhaba Go Türkiye!!!")
 	},
 }
