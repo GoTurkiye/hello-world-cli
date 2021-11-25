@@ -1,6 +1,6 @@
 FROM golang:1.17.1-alpine as build
 
-WORKDIR /src
+WORKDIR /app
 
 ENV CGO_ENABLED=0 \
     GOOS=linux \
@@ -16,7 +16,7 @@ RUN go build
 
 FROM scratch as final
 
-COPY --from=build /src/hello-world-cli ./
+COPY --from=build /app/hello-world-cli ./
 
 ENTRYPOINT [ "./hello-world-cli" ]
 
